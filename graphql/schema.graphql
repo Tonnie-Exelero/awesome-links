@@ -17,6 +17,13 @@ type Link {
   users: [User]
 }
 
+type Mutation {
+  createLink(category: String!, description: String!, imageUrl: String!, title: String!, url: String!): Link!
+  createUser(email: String!, name: String!, username: String!): User
+  deleteUser(id: String!): User!
+  findUser(email: String!): [User]!
+}
+
 type PageInfo {
   endCursor: String
   hasNextPage: Boolean

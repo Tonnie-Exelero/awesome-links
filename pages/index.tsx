@@ -30,7 +30,6 @@ function Home() {
     variables: { first: 2 },
   });
 
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Oh no... {error.message}</p>;
 
@@ -46,6 +45,7 @@ function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {data?.links.edges.map(({ node }) => (
             <AwesomeLink
+              key={node.id}
               title={node.title}
               category={node.category}
               url={node.url}
